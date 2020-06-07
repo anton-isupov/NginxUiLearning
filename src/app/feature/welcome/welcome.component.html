@@ -1,3 +1,15 @@
-<div class="wrapper">
+<c-header [items]="[
+    { id: '1', name: 'Main', selected: true},
+    { id: '2', name: 'Other', selected: false},
+    { id: '3', name: 'Other', selected: false},
+    { id: '4', name: 'Other', selected: false}
+]" [actionItems]="[
+{ id: '1', name: 'person', selected: false, children: [
+  {id: '1.1', name: 'Profile', selected: false, icon: 'assets/images/person.png', href: '/profile'},
+  {id: '1.2', name: 'Settings', selected: false, icon: 'assets/images/person.png', href: '/settings'}
+], icon: 'assets/images/person.png'},
+{ id: '2', name: 'person 1', selected: false, children: [], icon: 'assets/images/person.png'}
+]"></c-header>
 
+<div class="wrapper">
 </div>

@@ -1,6 +1,6 @@
 
 echo "Build project..."
-ng build
+ng build --prod
 echo "Build Success!"
 
 echo "Copy files to remote server"

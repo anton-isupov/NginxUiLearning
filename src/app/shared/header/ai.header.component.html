@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="header__container _container">
+    <div class="icon-menu" (click)="openBurgerMenu($event)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="" class="header__logo"><img src="" alt="">Logotype</a>
+    <div class="header__menu menu">
+      <nav class="menu__body" [class.active]="burgerMenuVisibility">
+        <ul class="menu__list">
+          <li *ngFor="let item of menuItems"><a href="" class="menu__link" [class._active]="item.selected">{{ item.name }}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__actions actions-header">
+      <div class="actions-header__user user-header" *ngFor="let actionItem of actionItems">
+        <div class="user-header__icon" (click)="addEvents($event, actionItem, actionItems)">
+          <img [src]="actionItem.icon" alt="">
+        </div>
+        <ul class="user-header__menu" *ngIf="actionItem.children.length" [class._active]="actionItem.selected">
+            <li *ngFor="let item of actionItem.children" (click)="addEvents($event, item, actionItem.children)" [class._active]="item.selected">
+              <a class="user-header__link user-header__link" [href]="item.href">
+                <img [src]="item.icon" alt="">
+                {{ item.name }}
+              </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</header>
